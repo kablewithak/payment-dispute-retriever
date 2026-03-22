@@ -2,6 +2,21 @@
 
 Synthetic fintech payment dispute retriever built in phases.
 
+## Case Study
+
+I built this project to learn Weaviate practically rather than passively.
+
+Instead of another toy semantic search demo, I built a fintech payment-dispute retriever with:
+- synthetic dispute data
+- Weaviate indexing
+- BM25, vector, hybrid, and filtered hybrid retrieval
+- a FastAPI retrieval API
+- an evaluation harness across 50 queries
+
+The key finding was that **hybrid + metadata filters** outperformed a more expensive reranked pipeline on both quality and latency.
+
+Read the full case study here: [docs/CASE_STUDY.md](docs/CASE_STUDY.md)
+
 ## Current status
 
 ### Phase 1 complete
@@ -41,3 +56,5 @@ python -m venv .venv
 . .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Copy-Item .env.example .env
+
+I built this project to learn Weaviate practically, and the main finding was that metadata-aware hybrid retrieval outperformed a more expensive reranked pipeline on both quality and latency.
